@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="This site is for the introduction of Seid Yasin Banihashmi, a programmer and web designer">
-    <title>وب سایت شخصی و نمونه کار -سید یاسین </title>
+    <title>سایت شخصی  و نمونه کار سید یاسین بنی هاشمی</title>
     <link rel="icon" type="image/png" href="images/photo16584725915.jpg" sizes="16x16">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/owl.carousel.css">
     <link rel="stylesheet" href="assets/css/owl.theme.green.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.css">
 <style>@font-face {
     font-family: "Vazir";
     src: url(yekan3.ttf);
@@ -1656,7 +1657,7 @@
                         </div>
                     </div>
                     <div class="col-right">
-                        <img class="image-main" src="assets/images/لوگو  سایت ما.jpg" onmouseover="alert(' لوگوی من');" style="border-radius: 27px;" alt="عکس من">
+                        <img id="imggg" class="image-main" src="assets/images/لوگو  سایت ما.jpg"  style="border-radius: 27px;" alt="عکس من" >
                         <img class="image-darkmode" src="assets/images/لوگو  سایت ما.jpg" alt="عکس من">
                     </div>
                 </div>
@@ -2070,27 +2071,27 @@
                     <div class="contact-inner d-flex">
                         <div class="input-block form-item">
                             <label for="">نام</label>
-                            <input type="text" name="name" required  onmouseover="alert('به دلیل اینکه در هاست گیت هاب نمی شود با بک اند ارتباط گرفت پیام برای من ارسال نمی شود برای برقراری ارتباط به حساب تلگرام یا لینکدین بنده مراجعه کنید')">
+                            <input id="name" type="text" name="name" required  onmouseover="alert('به دلیل اینکه در هاست گیت هاب نمی شود با بک اند ارتباط گرفت پیام برای من ارسال نمی شود برای برقراری ارتباط به حساب تلگرام یا لینکدین بنده مراجعه کنید')">
                         </div>
                         <div class="input-block form-item">
                             <label for="">فامیل</label>
-                            <input type="text" name="family" required>
+                            <input id="family" type="text" name="family" required>
                         </div>
                         <div class="input-block form-item">
                             <label for="">ایمیل</label>
-                            <input type="email" name="email" required>
+                            <input id="email" type="email" name="email" required>
                         </div>
                         <div class="input-block form-item">
                             <label for="">تلفن</label>
-                            <input type="text" name="phone" required>
+                            <input id="phone" type="text" name="phone" required>
                         </div>
 
                         <div class="textarea form-item">
                             <label for="">پیام شما</label>
-                            <textarea name="" id="" required></textarea>
+                            <textarea name="" id="message" required></textarea>
                         </div>
                         <div class="submit-btn form-item">
-                            <button type="submit" value="submit" class="btn btn-blue position-relative"> ارسال پیام           <spa class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
+                            <button onclick="validateForm()" id="buttonnn" type="submit" value="submit" class="btn btn-blue position-relative"> ارسال پیام           <spa class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
                                 بکوب روش😉
                                 <span class="visually-hidden">unread messages</span>
                               </spa></button>
@@ -2162,6 +2163,10 @@
     <script src="assets/js/owl.carousel.js"></script>
     <script src="assets/js/validate.js"></script>
     <script src="assets/js/main.js"></script>
+    <!-- لینک jQuery (پیش نیاز toastr) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- لینک JS toastr از CDN معتبر -->
+<script src="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.js"></script>
     <script>
         $(document).ready(function () {
             $("#basic-form").validate();
@@ -2170,7 +2175,65 @@
 
 
 </body>
+<script>
+    // تنظیمات toastr
+    toastr.options = {
+        "closeButton": true,
+        "progressBar": true,
+        "positionClass": "toast-top-left",
+        "timeOut": 5000,
+        "rtl": true
+    };
 
+    // روش بهتر از onclick در HTML
+    // document.getElementById('buttonnn').addEventListener('click', function() {
+        // toastr.success('پیام با موفقیت نمایش داده شد!', 'عملیات موفق');
+    // });
+
+    // document.getElementById('imggg').addEventListener('onmouseover', function() {
+    //     toastr.success('پیام با موفقیت نمایش داده شد!', 'عملیات موفق');
+    // });
+
+
+
+    function validateForm() {
+    const name = document.getElementById('name').value.trim();
+    const family = document.getElementById('family').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    // بررسی پر بودن تمام فیلدهای اجباری
+    if (name === '' || family === '' || email === '' || phone === '' || message === '') {
+        toastr.error('لطفاً تمام فیلدهای فرم را پر کنید', 'خطا');
+        return false;
+    }
+
+    // اعتبارسنجی ایمیل
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        toastr.error('لطفاً یک ایمیل معتبر وارد کنید', 'خطا');
+        return false;
+    }
+
+    // اعتبارسنجی شماره تلفن (حداقل 8 رقم)
+    const phoneRegex = /^\d{8,}$/;
+    if (!phoneRegex.test(phone)) {
+        toastr.error('لطفاً شماره تلفن معتبر وارد کنید (حداقل 8 رقم)', 'خطا');
+        return false;
+    }
+
+    // اگر همه چیز درست بود
+    toastr.success('فرم با موفقیت ارسال شد', 'موفقیت');
+    // document.getElementById('myForm').submit(); // فعال کردن این خط برای ارسال واقعی فرم
+    return true;
+}
+
+
+
+
+    
+</script>
 
 
 </script>
