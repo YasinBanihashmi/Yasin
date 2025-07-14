@@ -1,7 +1,12 @@
 @font-face {
-    font-family: yasin;
+    font-family:yasin;
     src: url(/assets/yekan3.ttf);
   }
+
+#body{
+
+font-family:yasin;
+}
 
 .yasin20:hover{
     background-color: #201e1e;
