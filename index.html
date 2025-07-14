@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html dir="rtl" lang="en">
+<html dir="rtl" lang="fa">
 
 <head>
     <meta charset="UTF-8">
@@ -14,50 +14,71 @@
 
 <body>
     <!-- Header -->
-    <header>
-        <div class="container">
-            <nav class="nav d-flex" id="home">
+    <header> <br> <br><br>
+        <!-- <div class="container">
                 <div class="logo">
                     <a class="tit" href="#" style="font-size: 20px; color:black;">
                         <img src="assets/images/لوگو  سایت ما.jpg" alt="لوگو شخصی سید یاسین بنی هاشمی" class="logo-main">
                         <img src="assets/images/لوگو  سایت ما.jpg" alt="لوگو شخصی سید یاسین بنی هاشمی" class="logo-dark">
 
-                    سید یاسین بنی هاشمی
-
+                    سید یاسین بنی هاشمی -->
+                    <li class="darkmode-btn d-desktop">
+                        <a href="javascript:void(0)">
+                            <img src="assets/images/brightness.svg" alt="brightness" class="bright">
+                            <img src="assets/images/moon.svg" alt="moon" class="dark"> </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="darkmode-btn d-mobile"><a href="javascript:void(0)">
+                    <img src="assets/images/brightness.svg" alt="brightness" class="bright">
+                    <img src="assets/images/moon.svg" alt="moon" class="dark"> </a></div>
                     </a>
                 </div>
-                <!-- toggle icon -->
-                <a href="javascript:void(0)" class="burger">
-                    <span class="one"></span>
-                    <span class="two"></span>
-                    <span class="three"></span>
-                    <span class="four"></span>
-
-                    <div class="close-icon">
-                        
-
-                    </div>
+               
                 </a>
-                <div class="navigation-bar">
-                    <ul id="nav">
-                        
-                        <li class="active"><a href="#home">خانه</a></li>
-                        <li><a href="#about">درباره من</a></li>
-                        <li><a href="#services">سرویس ها</a></li>
-                        <li><a href="#portfolio">نمونه کار ها</a></li>
-                        <li><a href="#contact">تماس با من</a></li>
-                        <li><a href="وبلاگ.html">وبلاگ ها</a></li>
-                        <li class="darkmode-btn d-desktop">
-                            <a href="javascript:void(0)">
-                                <img src="assets/images/brightness.svg" alt="brightness" class="bright">
-                                <img src="assets/images/moon.svg" alt="moon" class="dark"> </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="darkmode-btn d-mobile"><a href="javascript:void(0)">
-                        <img src="assets/images/brightness.svg" alt="brightness" class="bright">
-                        <img src="assets/images/moon.svg" alt="moon" class="dark"> </a></div>
-            </nav>
+              <nav class="navbar bg-body-tertiary fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Offcanvas navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex mt-3" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+                    
+          
         </div>
     </header>
     <main>
