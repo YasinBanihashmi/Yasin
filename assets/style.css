@@ -1,6 +1,8 @@
 @font-face {
     font-family:yasin;
     src: url(/assets/yekan3.ttf);
+    src: url('../yekan3.ttf'); /* اگر font.css در پوشه assets باشد */
+    src: url('yekan3.ttf');    /* اگر font.css و فونت در یک پوشه باشند */
   }
 
 #body{
