@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/fonts.css">
+    <title>سید یاسین بنی هاشمی| طراح سایت و توسعه دهنده وب</title>
+    <meta name="description" content="من یاسین هستم، طراح وب و برنامه‌نویس فرانت‌اند با تجربه در HTML، CSS، JavaScript، وردپرس، ری‌اکت، و سئو. سایت شخصی و نمونه‌کارهای من را ببینید.">
+    <meta name="keywords" content="طراحی سایت, برنامه نویسی, فرانت اند, سید یاسین بنی‌هاشمی, رزومه آنلاین, WordPress, React, توسعه‌دهنده وب">
+    <meta name="author" content="Seied Yasin Banihashmi">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://yasinbanihashmi.github.io/Yasin/">
+    <link rel="icon" type="image/jpg" href="/assets/images/My.jpg" sizes="16x16">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e6e6e6;
+            overflow-x: hidden;
+        }
+        
+        .card-3d {
+            transform-style: preserve-3d;
+            transition: all 0.5s ease;
+        }
+        
+        .card-3d:hover {
+            transform: rotateY(10deg) rotateX(5deg) translateY(-10px);
+        }
+        
+        .floating {
+            animation: floating 6s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .skill-bar {
+            height: 8px;
+            border-radius: 4px;
+            background: rgba(255,255,255,0.1);
+            overflow: hidden;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            border-radius: 4px;
+            background: linear-gradient(90deg, #00dbde 0%, #fc00ff 100%);
+            transition: width 1.5s ease;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 0;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #00dbde;
+            border: 3px solid #fc00ff;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: -24px;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background: rgba(255,255,255,0.1);
+        }
+        
+        .glow {
+            box-shadow: 0 0 15px rgba(0, 219, 222, 0.5);
+        }
+        
+        .glow:hover {
+            box-shadow: 0 0 25px rgba(252, 0, 255, 0.7);
+        }
+        
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .text-gradient {
+            background: linear-gradient(90deg, #00dbde 0%, #fc00ff 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Animated Background -->
+    <div class="fixed inset-0 overflow-hidden -z-10">
+        <div class="absolute inset-0 bg-gradient-to-br from-purple-900/20 to-blue-900/20"></div>
+        <div id="particles-js" class="absolute inset-0"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-70 backdrop-blur-md">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold text-gradient">RESUME<span class="text-white">3D</span></a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-white hover:text-purple-300 transition">خانه</a>
+                    <a href="#about" class="text-white hover:text-purple-300 transition">درباره من</a>
+                    <a href="#services" class="text-white hover:text-purple-300 transition">خدمات من</a>
+                    <a href="#portfolio" class="text-white hover:text-purple-300 transition">نمونه کارها</a>
+                    <a href="#skills" class="text-white hover:text-purple-300 transition">مهارت‌ها</a>
+                    <a href="#experience" class="text-white hover:text-purple-300 transition">سوابق</a>
+                    <a href="#blog" class="text-white hover:text-purple-300 transition">وبلاگ</a>
+                    <a href="#contact" class="text-white hover:text-purple-300 transition">تماس</a>
+                </div>
+                <div class="mobile-menu hidden absolute top-full left-0 right-0 bg-black bg-opacity-90 backdrop-blur-lg flex flex-col items-center py-4 space-y-4">
+                    <a href="#home" class="text-white hover:text-purple-300 transition">خانه</a>
+                    <a href="#about" class="text-white hover:text-purple-300 transition">درباره من</a>
+                    <a href="#services" class="text-white hover:text-purple-300 transition">خدمات من</a>
+                    <a href="#portfolio" class="text-white hover:text-purple-300 transition">نمونه کارها</a>
+                    <a href="#skills" class="text-white hover:text-purple-300 transition">مهارت‌ها</a>
+                    <a href="#experience" class="text-white hover:text-purple-300 transition">سوابق</a>
+                    <a href="#blog" class="text-white hover:text-purple-300 transition">وبلاگ</a>
+                    <a href="#contact" class="text-white hover:text-purple-300 transition">تماس</a>
+                </div>
+                <button class="md:hidden text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center pt-20">
+        <div class="container mx-auto px-6 py-12 md:py-24">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4">سلام، من <span class="text-gradient">سید یاسین بنی هاشمی</span> هستم</h1>
+                    <h2 class="text-2xl md:text-3xl text-purple-300 mb-6">توسعه دهنده وب</h2>
+                    <p class="text-lg text-gray-300 mb-8 max-w-lg">سلام، من سید یاسین بنی‌هاشمی هستم؛
+                        طراح سایت تمرکز‌محور بر تجربه‌کاربری، عملکرد و رشد دیجیتال.
+                        آماده‌ام سایت‌های حرفه‌ای بسازم که کسب‌و‌کارت رو بالا ببره</p>
+                    <div class="flex space-x-4">
+                        <a href="#contact" class="px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-500 rounded-full text-white font-semibold hover:opacity-90 transition transform hover:scale-105 glow">استخدام من</a>
+                        <a href="#" class="px-8 py-3 border border-purple-500 rounded-full text-white font-semibold hover:bg-purple-900 hover:bg-opacity-30 transition transform hover:scale-105">دانلود رزومه</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative w-64 h-64 md:w-80 md:h-80">
+                        <div class="absolute inset-0 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full opacity-20 blur-xl"></div>
+                        <div class="relative card-3d floating">
+                            <img src="assets/images/My.jpg" 
+                                 alt="Profile" 
+                                 class="w-full h-full object-cover rounded-full border-4 border-white shadow-2xl">
+                        </div>
+                        <div class="absolute -bottom-5 -right-5 bg-black bg-opacity-70 p-3 rounded-full border border-purple-500 glow">
+                            <span class="text-white text-xl font-bold">5+</span>
+                            <span class="text-purple-300 text-sm">میزان سابقه</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-black bg-opacity-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-gradient">درباره من</h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-12 md:mb-0 flex justify-center">
+                    <div class="relative w-64 h-64">
+                        <div class="absolute inset-0 bg-gradient-to-br from-purple-500 to-blue-500 rounded-2xl opacity-20 blur-xl"></div>
+                        <div class="relative card-3d">
+                            <img src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                                 alt="About" 
+                                 class="w-full h-full object-cover rounded-2xl border-4 border-white shadow-2xl">
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-2/3 md:pl-12">
+                    <h3 class="text-2xl font-bold mb-6 text-purple-300">من کی هستم؟</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        من یاسین هستم،  از ساوه… طراحی سایت با وردپرس و HTML/CSS/JS انجام می‌دم. هدفم ایجاد پروژه‌هایی‌ست که فقط ظاهر زیبا ندارن؛ بلکه فروش، اعتماد، سرعت و امنیت هم دارند. 
+
+                    </p>
+                    <p class="text-gray-300 mb-8 leading-relaxed">
+                        من در ایجاد رابط‌های کاربری واکنش‌گرا و کاربرپسند با معماری کد تمیز تخصص دارم.
+                        هدف من ساخت برنامه‌هایی است که نه تنها نیازهای کسب‌وکار را برآورده می‌کنند، بلکه
+                        تجربه کاربری استثنایی ارائه می‌دهند.
+                    </p>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="bg-black bg-opacity-40 p-4 rounded-lg border border-gray-800 hover:border-purple-500 transition">
+                            <div class="text-purple-400 mb-2">
+                                <i class="fas fa-code text-2xl"></i>
+                            </div>
+                            <h4 class="font-semibold text-white">Web Development</h4>
+                        </div>
+                        <div class="bg-black bg-opacity-40 p-4 rounded-lg border border-gray-800 hover:border-purple-500 transition">
+                            <div class="text-purple-400 mb-2">
+                                <i class="fas fa-mobile-alt text-2xl"></i>
+                            </div>
+                            <h4 class="font-semibold text-white">Responsive Design</h4>
+                        </div>
+                        <div class="bg-black bg-opacity-40 p-4 rounded-lg border border-gray-800 hover:border-purple-500 transition">
+                            <div class="text-purple-400 mb-2">
+                                <i class="fas fa-server text-2xl"></i>
+                            </div>
+                            <h4 class="font-semibold text-white">Backend Services</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-gradient">خدمات من</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card-3d bg-black bg-opacity-50 p-8 rounded-2xl border border-gray-800 hover:border-purple-500 transition">
+                    <div class="text-purple-400 mb-4 text-4xl">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">توسعه وب</h3>
+                    <p class="text-gray-300">طراحی و توسعه وبسایت‌های حرفه‌ای و واکنش‌گرا با جدیدترین تکنولوژی‌ها</p>
+                </div>
+                <div class="card-3d bg-black bg-opacity-50 p-8 rounded-2xl border border-gray-800 hover:border-purple-500 transition">
+                    <div class="text-purple-400 mb-4 text-4xl">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">اپلیکیشن موبایل</h3>
+                    <p class="text-gray-300">ساخت اپلیکیشن‌های موبایل با عملکرد عالی برای پلتفرم‌های مختلف</p>
+                </div>
+                <div class="card-3d bg-black bg-opacity-50 p-8 rounded-2xl border border-gray-800 hover:border-purple-500 transition">
+                    <div class="text-purple-400 mb-4 text-4xl">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">سئو و بهینه‌سازی</h3>
+                    <p class="text-gray-300">بهینه‌سازی وبسایت برای موتورهای جستجو و افزایش رتبه در گوگل</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-black bg-opacity-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-gradient">نمونه کارها</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card-3d group relative overflow-hidden rounded-2xl">
+                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" 
+                         alt="Portfolio 1" 
+                         class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                        <div>
+                            <h3 class="text-xl font-bold text-white">وبسایت فروشگاهی</h3>
+                            <p class="text-purple-300">توسعه با React و Node.js</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-3d group relative overflow-hidden rounded-2xl">
+                    <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80" 
+                         alt="Portfolio 2" 
+                         class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                        <div>
+                            <h3 class="text-xl font-bold text-white">اپلیکیشن موبایل</h3>
+                            <p class="text-purple-300">توسعه با React Native</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-3d group relative overflow-hidden rounded-2xl">
+                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" 
+                         alt="Portfolio 3" 
+                         class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                        <div>
+                            <h3 class="text-xl font-bold text-white">پنل مدیریت</h3>
+                            <p class="text-purple-300">توسعه با Vue.js و Laravel</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-gradient">آخرین مطالب وبلاگ</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card-3d bg-black bg-opacity-50 rounded-2xl border border-gray-800 hover:border-purple-500 transition overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                         alt="Blog 1" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-purple-300 mb-3">
+                            <span>15 خرداد 1402</span>
+                            <span class="mx-2">•</span>
+                            <span>5 دقیقه مطالعه</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">بهترین فریمورک‌های جاوااسکریپت در سال 2023</h3>
+                        <p class="text-gray-300 mb-4">مقایسه جامع بین React، Vue و Angular و انتخاب بهترین گزینه برای پروژه شما</p>
+                        <a href="#" class="text-purple-300 hover:text-purple-200 transition">ادامه مطلب →</a>
+                    </div>
+                </div>
+                <div class="card-3d bg-black bg-opacity-50 rounded-2xl border border-gray-800 hover:border-purple-500 transition overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80" 
+                         alt="Blog 2" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-purple-300 mb-3">
+                            <span>2 اردیبهشت 1402</span>
+                            <span class="mx-2">•</span>
+                            <span>8 دقیقه مطالعه</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">راهنمای جامع سئو برای توسعه‌دهندگان</h3>
+                        <p class="text-gray-300 mb-4">نکات کلیدی سئو فنی که هر توسعه‌دهنده وب باید بداند</p>
+                        <a href="#" class="text-purple-300 hover:text-purple-200 transition">ادامه مطلب →</a>
+                    </div>
+                </div>
+                <div class="card-3d bg-black bg-opacity-50 rounded-2xl border border-gray-800 hover:border-purple-500 transition overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                         alt="Blog 3" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-purple-300 mb-3">
+                            <span>20 فروردین 1402</span>
+                            <span class="mx-2">•</span>
+                            <span>6 دقیقه مطالعه</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">معرفی 10 ابزار ضروری برای توسعه‌دهندگان</h3>
+                        <p class="text-gray-300 mb-4">ابزارهایی که بهره‌وری شما را در توسعه نرم‌افزار افزایش می‌دهند</p>
+                        <a href="#" class="text-purple-300 hover:text-purple-200 transition">ادامه مطلب →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="#" class="px-8 py-3 border border-purple-500 rounded-full text-white font-semibold hover:bg-purple-900 hover:bg-opacity-30 transition transform hover:scale-105">
+                    مشاهده همه مطالب
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-gradient">My Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="card-3d bg-black bg-opacity-50 p-8 rounded-2xl border border-gray-800 hover:border-purple-500 transition">
+                    <h3 class="text-2xl font-bold mb-6 text-purple-300">مهارت‌های فنی</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-white">JavaScript/TypeScript</span>
+                                <span class="text-purple-300">95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-white">React.js</span>
+                                <span class="text-purple-300">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-white">Node.js</span>
+                                <span class="text-purple-300">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-white">HTML/CSS</span>
+                                <span class="text-purple-300">95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-3d bg-black bg-opacity-50 p-8 rounded-2xl border border-gray-800 hover:border-purple-500 transition">
+                    <h3 class="text-2xl font-bold mb-6 text-purple-300">مهارت‌های حرفه‌ای</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-white">Communication</span>
+                                <span class="text-purple-300">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-white">Team Work</span>
+                                <span class="text-purple-300">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-white">Problem Solving</span>
+                                <span class="text-purple-300">95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-white">Creativity</span>
+                                <span class="text-purple-300">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-black bg-opacity-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-gradient">Experience & Education</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold mb-8 text-purple-300 flex items-center">
+                        <i class="fas fa-briefcase ml-3"></i> سوابق کاری
+                    </h3>
+                    <div class="relative timeline pl-8">
+                        <div class="relative mb-12 timeline-item">
+                            <div class="card-3d bg-black bg-opacity-50 p-6 rounded-xl border border-gray-800 hover:border-purple-500 transition">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h4 class="text-xl font-bold text-white">Senior Frontend Developer</h4>
+                                    <span class="px-3 py-1 bg-purple-900 bg-opacity-50 rounded-full text-sm text-purple-300">2021 - Present</span>
+                                </div>
+                                <h5 class="text-purple-300 mb-3">TechCorp Inc.</h5>
+                                <p class="text-gray-300">
+                                    Lead a team of 5 developers to build enterprise-level applications using React and TypeScript.
+                                    Implemented CI/CD pipelines and improved performance by 40%.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="relative mb-12 timeline-item">
+                            <div class="card-3d bg-black bg-opacity-50 p-6 rounded-xl border border-gray-800 hover:border-purple-500 transition">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h4 class="text-xl font-bold text-white">Full Stack Developer</h4>
+                                    <span class="px-3 py-1 bg-purple-900 bg-opacity-50 rounded-full text-sm text-purple-300">2018 - 2021</span>
+                                </div>
+                                <h5 class="text-purple-300 mb-3">Digital Solutions LLC</h5>
+                                <p class="text-gray-300">
+                                    Developed and maintained web applications using MERN stack. 
+                                    Collaborated with designers to implement responsive UIs.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-8 text-purple-300 flex items-center">
+                        <i class="fas fa-graduation-cap ml-3"></i> تحصیلات
+                    </h3>
+                    <div class="relative timeline pl-8">
+                        <div class="relative mb-12 timeline-item">
+                            <div class="card-3d bg-black bg-opacity-50 p-6 rounded-xl border border-gray-800 hover:border-purple-500 transition">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h4 class="text-xl font-bold text-white">Master in Computer Science</h4>
+                                    <span class="px-3 py-1 bg-purple-900 bg-opacity-50 rounded-full text-sm text-purple-300">2016 - 2018</span>
+                                </div>
+                                <h5 class="text-purple-300 mb-3">Stanford University</h5>
+                                <p class="text-gray-300">
+                                    Specialized in Artificial Intelligence and Web Technologies. 
+                                    Thesis on "Neural Networks for Predictive Analytics".
+                                </p>
+                            </div>
+                        </div>
+                        <div class="relative mb-12 timeline-item">
+                            <div class="card-3d bg-black bg-opacity-50 p-6 rounded-xl border border-gray-800 hover:border-purple-500 transition">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h4 class="text-xl font-bold text-white">Bachelor in Software Engineering</h4>
+                                    <span class="px-3 py-1 bg-purple-900 bg-opacity-50 rounded-full text-sm text-purple-300">2012 - 2016</span>
+                                </div>
+                                <h5 class="text-purple-300 mb-3">MIT</h5>
+                                <p class="text-gray-300">
+                                    Graduated with honors. Active member of the Web Development Club. 
+                                    Developed several award-winning projects.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-gradient">Get In Touch</h2>
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-12 md:mb-0 md:pr-8">
+                    <div class="card-3d bg-black bg-opacity-50 p-8 rounded-2xl border border-gray-800 hover:border-purple-500 transition">
+                        <h3 class="text-2xl font-bold mb-6 text-purple-300">Contact Information</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="text-purple-400 mr-4 mt-1">
+                                    <i class="fas fa-envelope text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-semibold mb-1">Email</h4>
+                                    <p class="text-gray-300">john.doe@example.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="text-purple-400 mr-4 mt-1">
+                                    <i class="fas fa-phone-alt text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-semibold mb-1">Phone</h4>
+                                    <p class="text-gray-300">+1 (555) 123-4567</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="text-purple-400 mr-4 mt-1">
+                                    <i class="fas fa-map-marker-alt text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-semibold mb-1">Location</h4>
+                                    <p class="text-gray-300">San Francisco, CA</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-8">
+                            <h4 class="text-white font-semibold mb-4">Follow Me</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="w-10 h-10 flex items-center justify-center bg-purple-900 bg-opacity-50 rounded-full text-purple-300 hover:bg-purple-800 transition">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 flex items-center justify-center bg-purple-900 bg-opacity-50 rounded-full text-purple-300 hover:bg-purple-800 transition">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 flex items-center justify-center bg-purple-900 bg-opacity-50 rounded-full text-purple-300 hover:bg-purple-800 transition">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 flex items-center justify-center bg-purple-900 bg-opacity-50 rounded-full text-purple-300 hover:bg-purple-800 transition">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="card-3d bg-black bg-opacity-50 p-8 rounded-2xl border border-gray-800 hover:border-purple-500 transition">
+                        <h3 class="text-2xl font-bold mb-6 text-purple-300">Send Me a Message</h3>
+                        <form>
+                            <div class="mb-6">
+                                <label for="name" class="block text-white mb-2">نام شما</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 bg-black bg-opacity-30 border border-gray-700 rounded-lg focus:outline-none focus:border-purple-500 text-white transition">
+                            </div>
+                            <div class="mb-6">
+                                <label for="email" class="block text-white mb-2">ایمیل شما</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 bg-black bg-opacity-30 border border-gray-700 rounded-lg focus:outline-none focus:border-purple-500 text-white transition">
+                            </div>
+                            <div class="mb-6">
+                                <label for="subject" class="block text-white mb-2">موضوع</label>
+                                <input type="text" id="subject" class="w-full px-4 py-3 bg-black bg-opacity-30 border border-gray-700 rounded-lg focus:outline-none focus:border-purple-500 text-white transition">
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-white mb-2">پیام</label>
+                                <textarea id="message" rows="5" class="w-full px-4 py-3 bg-black bg-opacity-30 border border-gray-700 rounded-lg focus:outline-none focus:border-purple-500 text-white transition"></textarea>
+                            </div>
+                            <button type="submit" class="w-full px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-500 rounded-lg text-white font-semibold hover:opacity-90 transition transform hover:scale-[1.01] glow">
+                                ارسال پیام
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black bg-opacity-70 py-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <a href="#" class="text-2xl font-bold text-gradient">RESUME<span class="text-white">3D</span></a>
+                </div>
+                <div class="text-gray-400 text-sm">
+                    &copy; ۱۴۰۲ علی محمدی. تمام حقوق محفوظ است.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#home" class="fixed bottom-8 right-8 w-12 h-12 flex items-center justify-center bg-purple-600 rounded-full text-white shadow-lg hover:bg-purple-700 transition transform hover:scale-110 glow">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuButton = document.querySelector('button[class*="md:hidden"]');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            menuButton.addEventListener('click', function() {
+                if(mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.remove('hidden');
+                    mobileMenu.style.display = 'flex';
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.style.display = 'none';
+                }
+            });
+
+            // Close menu when clicking on a link
+            document.querySelectorAll('.mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.style.display = 'none';
+                });
+            });
+        });
+
+        // Initialize particles.js
+        document.addEventListener('DOMContentLoaded', function() {
+            particlesJS('particles-js', {
+                "particles": {
+                    "number": {
+                        "value": 80,
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": "#9e7ff1"
+                    },
+                    "shape": {
+                        "type": "circle",
+                        "stroke": {
+                            "width": 0,
+                            "color": "#000000"
+                        },
+                        "polygon": {
+                            "nb_sides": 5
+                        }
+                    },
+                    "opacity": {
+                        "value": 0.5,
+                        "random": false,
+                        "anim": {
+                            "enable": false,
+                            "speed": 1,
+                            "opacity_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "size": {
+                        "value": 3,
+                        "random": true,
+                        "anim": {
+                            "enable": false,
+                            "speed": 40,
+                            "size_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": "#7e5bef",
+                        "opacity": 0.4,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 2,
+                        "direction": "none",
+                        "random": false,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false,
+                        "attract": {
+                            "enable": false,
+                            "rotateX": 600,
+                            "rotateY": 1200
+                        }
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "grab"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        },
+                        "resize": true
+                    },
+                    "modes": {
+                        "grab": {
+                            "distance": 140,
+                            "line_linked": {
+                                "opacity": 1
+                            }
+                        },
+                        "bubble": {
+                            "distance": 400,
+                            "size": 40,
+                            "duration": 2,
+                            "opacity": 8,
+                            "speed": 3
+                        },
+                        "repulse": {
+                            "distance": 200,
+                            "duration": 0.4
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        },
+                        "remove": {
+                            "particles_nb": 2
+                        }
+                    }
+                },
+                "retina_detect": true
+            });
+
+            // Animate skill bars on scroll
+            const skillBars = document.querySelectorAll('.skill-progress');
+            
+            function animateSkillBars() {
+                skillBars.forEach(bar => {
+                    const width = bar.style.width;
+                    bar.style.width = '0';
+                    setTimeout(() => {
+                        bar.style.width = width;
+                    }, 100);
+                });
+            }
+
+            // Intersection Observer for scroll animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fadeIn');
+                        if (entry.target.classList.contains('skill-progress')) {
+                            animateSkillBars();
+                        }
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.card-3d, .skill-progress').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Smooth scrolling for navigation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
