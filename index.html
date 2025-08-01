@@ -13,6 +13,16 @@
     <link rel="icon" type="image/jpg" href="/assets/images/My.jpg" sizes="16x16">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta property="og:locale" content="fa_IR" />
+	<meta property="og:locale:alternate" content="en_US" />
+	<meta property="og:locale:alternate" content="ar_AR" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="سید یاسین بنی هاشمی|طراح سایت و توسعه دهنده وب" />
+	<meta property="og:url" content="https://yasinbanihashmi.github.io/Yasin/" />
+    <meta property="og:description" content="نمونه کارها، مهارت‌ها و تجربیات حرفه‌ای یاسین بنی هاشمی در زمینه توسعه وب و طراحی" />
+    <meta property="og:image" content="https://yasinbanihashmi.github.io/Yasin/images/og-image.jpg" />
+
+
 
     <style>
         @font-face {
@@ -317,7 +327,7 @@
                                 data-title="وبسایت شخصی"
                                 data-description="این سایت یک سایت شخصی است که شامل بخش های درباره من مهارت های من و خدمات ارتباط با من نمونه کار و .. وبلاگ با استفاده از html css javascript jquery bootstarp ساخته شده است "
                                 data-technologies="HTML, CSS, JavaScript, bootstarp,jquery, PhP"
-                                data-link="#">
+                                data-link="https://yasinbanihashmi.github.io/Yasin/index0.html/">
                             جزئیات پروژه
                         </button>
                     </div>
@@ -1024,6 +1034,54 @@
                 });
             });
         });
+
+
+
+
+
+
+
+        document.querySelectorAll('.portfolio-detail-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const link = button.getAttribute('data-link');
+                if (link && link !== '#') {
+                    window.location.href = link; // هدایت به لینک
+                } else {
+                    alert('لینک پروژه هنوز تنظیم نشده است!');
+                }
+            });
+        });
+
+
+
+// document.addEventListener("keydown", function(e) {
+//   // جلوگیری از Ctrl+U (View Source)
+//   if (e.ctrlKey && e.key === "u") {
+//     e.preventDefault();
+//     alert("دسترسی به سورس صفحه محدود شده است!");
+//   }
+  
+//   // جلوگیری از Ctrl+Shift+I (DevTools)
+//   if (e.ctrlKey && e.shiftKey && e.key === "I") {
+//     e.preventDefault();
+//     alert("دسترسی به DevTools محدود شده است!");
+//   }
+  
+//   // جلوگیری از F12 (DevTools)
+//   if (e.key === "F12") {
+//     e.preventDefault();
+//     alert("دسترسی به DevTools محدود شده است!");
+//   }
+// });
+
+// // جلوگیری از راست‌کلیک
+// document.addEventListener("contextmenu", function(e) {
+//   e.preventDefault();
+//   alert("راست‌کلیک غیرفعال است!");
+// });
+
+
+        
     </script>
 </body>
 </html>
